@@ -11,8 +11,8 @@ public class GetRequest {
     public GetRequest(String url, String path){
         requestSpecification=RestAssured.given().baseUri(url).basePath(path);
     }
-    public void addHeader(){
-
+    public void addHeader(String key, String value){
+        this.requestSpecification.header(key,value);
     }
     public void addQueryParameter(String key, String value){
         this.requestSpecification.queryParam(key,value);
